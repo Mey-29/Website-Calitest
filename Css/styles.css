@@ -1,0 +1,112 @@
+/* Sección de Clientes (sin cambios relevantes aquí) */
+.clients-section {
+    padding: 50px 0;
+    background-color: #f8f8f8;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+
+
+
+/* Contenedor del Slider */
+.clients-slider {
+    display: flex;
+    animation: scroll-clients 30s linear infinite;
+    white-space: nowrap;
+    will-change: transform;
+    /* La clave para que no quede vacío es el número de elementos y el translateX */
+    /* No es necesario tocar el width: fit-content; */
+    padding: 20px 0;
+}
+
+/* Cada Slide individual (sin cambios) */
+.clients-slider .slide {
+    flex-shrink: 0;
+    width: 200px;
+    height: 100px;
+    margin: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.clients-slider .slide:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.clients-slider .slide img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.clients-slider .slide img:hover {
+    transform: scale(1.1);
+}
+
+/* Definición de la animación de desplazamiento */
+@keyframes scroll-clients {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* ESTO ES EL CAMBIO CLAVE para evitar el espacio vacío */
+        /* Calcula: (ancho del slide + margen derecho) * número de SLIDES ORIGINALES */
+        /* Si tu slide es 200px y tienes 30px de margen derecho (margin: 0 30px;), el total es 230px */
+        /* Si tienes 5 slides originales, el desplazamiento debe ser: 230px * 5 = 1150px */
+        transform: translateX(calc(-230px * 5)); /* AJUSTA ESTE VALOR SEGÚN TUS CÁLCULOS */
+    }
+}
+
+/* El resto del CSS (media queries, etc.) permanece igual */
+/* Pausar la animación al pasar el mouse (opcional) */
+.clients-slider:hover {
+    animation-play-state: paused;
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 768px) {
+    .clients-title {
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+    .clients-slider .slide {
+        width: 150px; /* Reducir el ancho de los logos en tablets */
+        height: 80px;
+        margin: 0 20px; /* Ajustar margen para cálculo */
+    }
+    @keyframes scroll-clients {
+        100% {
+            /* (150px + 20px margen derecho) * 5 slides originales = 170px * 5 = 850px */
+            transform: translateX(calc(-170px * 5)); /* Ajustar el valor de desplazamiento */
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .clients-title {
+        font-size: 22px;
+        margin-bottom: 30px;
+    }
+    .clients-slider .slide {
+        width: 120px; /* Reducir aún más el ancho de los logos en móviles */
+        height: 70px;
+        margin: 0 15px; /* Ajustar margen para cálculo */
+    }
+    @keyframes scroll-clients {
+        100% {
+            /* (120px + 15px margen derecho) * 5 slides originales = 135px * 5 = 675px */
+            transform: translateX(calc(-135px * 5)); /* Ajustar el valor de desplazamiento */
+        }
+    }
+}
+

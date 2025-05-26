@@ -1,3 +1,4 @@
+/* Generales del HTML y Body para el layout */
 html, body {
     height: 100%;
 }
@@ -5,19 +6,19 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    background: #e9ecf1;
+    min-height: 100vh; /* Asegura que el body ocupe al menos el 100% de la altura de la ventana */
+    background: #e9ecf1; /* Color de fondo general */
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #222;
 }
 
-/* Ajustes para el contenido principal y el formulario */
+/* Contenido Principal y Contenedor del Formulario */
 .main-content {
-    flex: 1; /* Permite que el main-content ocupe el espacio restante */
-    display: flex; /* Para centrar el formulario dentro de él */
-    justify-content: center; /* Centrar horizontalmente */
-    align-items: flex-start; /* Alinear al inicio verticalmente (arriba) */
+    flex: 1; /* Permite que el main-content ocupe el espacio restante, empujando el footer hacia abajo */
+    display: flex; /* Usa flexbox para alinear el formulario dentro de él */
+    justify-content: center; /* Centra el formulario horizontalmente */
+    align-items: flex-start; /* Alinea el formulario al inicio verticalmente (arriba) */
     padding: 40px 20px; /* Añadir padding para que el formulario no pegue a los bordes */
     width: 100%; /* Asegurar que ocupe todo el ancho disponible */
     box-sizing: border-box; /* Incluir padding en el ancho */
@@ -29,21 +30,23 @@ body {
     margin: 0 auto; /* Centrar horizontalmente si el ancho es menor al máximo */
 }
 
+/* Estilos del Formulario en sí */
 .contact-form {
     background-color: #fff;
     padding: 40px 30px;
     border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0, 128, 0, 0.15);
-    transition: box-shadow 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0, 128, 0, 0.15); /* Sombra suave para darle profundidad */
+    transition: box-shadow 0.3s ease; /* Transición para el efecto hover */
 }
 
 .contact-form:hover {
-    box-shadow: 0 12px 40px rgba(0, 128, 0, 0.25);
+    box-shadow: 0 12px 40px rgba(0, 128, 0, 0.25); /* Sombra más pronunciada al pasar el ratón */
 }
 
+/* Título del Formulario */
 .form-title {
     text-align: center;
-    color: #198754;
+    color: #198754; /* Un verde oscuro */
     font-size: 2.5rem;
     margin-bottom: 30px;
     font-weight: 700;
@@ -55,79 +58,93 @@ body {
     display: block;
     width: 80px;
     height: 4px;
-    background: linear-gradient(90deg, #198754, #00cc44);
-    margin: 8px auto 0;
+    background: linear-gradient(90deg, #198754, #00cc44); /* Degradado para la línea */
+    margin: 8px auto 0; /* Centra la línea */
     border-radius: 2px;
-    transition: width 0.3s ease;
+    transition: width 0.3s ease; /* Transición para el efecto hover de la línea */
 }
 
 .form-title:hover::after {
-    width: 140px;
+    width: 140px; /* La línea se alarga al pasar el ratón */
 }
 
+/* Grupos de campos (para poner 2 campos por fila) */
 .form-group {
-    display: flex;
-    gap: 25px;
-    margin-bottom: 20px;
+    display: flex; /* Habilita Flexbox para alinear elementos en fila */
+    gap: 25px; /* Espacio entre los campos de cada fila */
+    margin-bottom: 20px; /* Espacio debajo de cada grupo de campos */
     flex-wrap: wrap; /* Permite que los elementos salten de línea en pantallas pequeñas */
 }
 
 .form-group > div {
-    min-width: 250px; /* Ancho mínimo para que no se aprieten demasiado */
+    flex: 1; /* ¡CLAVE! Hace que cada div interno ocupe espacio equitativo */
+    min-width:300px; /* Ancho mínimo para que no se aprieten demasiado */
+    display: flex; /* Habilita Flexbox para label e input/textarea */
+    flex-direction: column; /* Coloca la label encima del input/textarea */
 }
 
-/* Nueva regla para el campo de mensaje para que ocupe todo el ancho */
+/* Campo de mensaje que ocupa todo el ancho */
+.form-group.full-width {
+    /* No uses display: flex; aquí, ya que quieres que el div interno ocupe todo el ancho */
+    display: block; /* Vuelve a block para que no aplique flexbox al contenedor */
+}
+
 .form-group.full-width > div {
     flex: 1 1 100%; /* Ocupa todo el ancho disponible */
-    min-width: unset; /* Elimina el min-width anterior */
+    min-width: unset; /* Elimina el min-width anterior para este caso */
 }
 
-
+/* Estilos de las etiquetas (labels) */
 label {
-    display: block;
+    display: block; /* Asegura que la etiqueta ocupe su propia línea */
     margin-bottom: 8px;
     font-weight: 600;
-    color: #2c6e49;
+    color: #2c6e49; /* Color de texto para las etiquetas */
 }
 
+/* Estilos de los campos de entrada de texto, email, teléfono y textarea */
 input[type="text"],
 input[type="email"],
 input[type="tel"],
 textarea,
 input[type="file"] {
-    width: 100%;
+    width: 100%; /* Ocupa el 100% del espacio de su contenedor (el div padre) */
     padding: 12px 15px;
-    border: 1.8px solid #a4cca8;
+    border: 1.8px solid #a4cca8; /* Borde más pronunciado y de color suave */
     border-radius: 8px;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Muy importante para que padding y border no aumenten el ancho total */
     font-size: 1rem;
     color: #222;
     background-color: #fefefe;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: inset 0 1px 3px rgb(0 0 0 / 0.07);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transiciones para el enfoque */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.07); /* Sombra interna para un efecto de profundidad */
 }
 
+/* Estilos al enfocar los campos */
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="tel"]:focus,
 textarea:focus,
 input[type="file"]:focus {
-    border-color: #198754;
-    outline: none;
-    box-shadow: 0 0 8px 2px rgba(25, 135, 84, 0.4);
+    border-color: #198754; /* Borde verde al enfocar */
+    outline: none; /* Elimina el contorno predeterminado del navegador */
+    box-shadow: 0 0 8px 2px rgba(25, 135, 84, 0.4); /* Sombra exterior al enfocar */
 }
 
+/* Estilo específico para el textarea */
 textarea {
-    resize: vertical;
-    min-height: 120px;
-    font-family: inherit;
+    resize: vertical; /* Permite al usuario redimensionar verticalmente */
+    min-height: 120px; /* Altura mínima para el textarea */
+    font-family: inherit; /* Hereda la fuente del body */
 }
 
+/* Estilo para los asteriscos de campos requeridos */
 .required {
-    color: #d32f2f;
+    color: #d32f2f; /* Rojo */
     font-weight: 700;
 }
 
+/* Sección de adjuntar archivos */
 .attachments {
     margin-bottom: 25px;
 }
@@ -136,10 +153,11 @@ textarea {
     margin-bottom: 10px;
 }
 
+/* Política de Privacidad (checkbox y enlace) */
 .privacy-policy {
     display: flex;
-    align-items: center;
-    gap: 10px;
+    align-items: center; /* Alinea el checkbox y el texto verticalmente */
+    gap: 10px; /* Espacio entre el checkbox y el texto */
     font-size: 0.95rem;
     color: #2c6e49;
     margin-bottom: 30px;
@@ -169,9 +187,10 @@ textarea {
     text-decoration: underline;
 }
 
+/* Botón de Enviar */
 button[type="submit"] {
     width: 100%;
-    background-color: #198754;
+    background-color: #198754; /* Verde principal */
     color: white;
     padding: 15px 0;
     font-size: 1.2rem;
@@ -180,23 +199,24 @@ button[type="submit"] {
     border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.15s ease;
-    box-shadow: 0 4px 12px rgba(25, 135, 84, 0.5);
+    box-shadow: 0 4px 12px rgba(25, 135, 84, 0.5); /* Sombra para el botón */
 }
 
 button[type="submit"]:hover {
-    background-color: #0f4f29;
-    transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(15, 79, 41, 0.7);
+    background-color: #0f4f29; /* Verde más oscuro al pasar el ratón */
+    transform: scale(1.05); /* Efecto de crecimiento al pasar el ratón */
+    box-shadow: 0 6px 20px rgba(15, 79, 41, 0.7); /* Sombra más intensa al pasar el ratón */
 }
 
+/* Notas de campos necesarios */
 .notes {
-    color: #d32f2f;
+    color: #d32f2f; /* Rojo */
     font-size: 0.9rem;
     text-align: center;
     margin-top: 12px;
 }
 
-/* Estilos para el Footer (Asumiendo que viene de footer.php) */
+/* Estilos para el Footer (asumiendo que está incluido con PHP) */
 footer {
     background-color: #333; /* Color de fondo del footer */
     color: white;
@@ -204,36 +224,53 @@ footer {
     text-align: center;
     width: 100%; /* Asegura que el footer ocupe todo el ancho */
     box-sizing: border-box; /* Incluye padding en el ancho */
-    margin-top: auto; /* Empuja el footer hacia abajo */
+    margin-top: auto; /* Empuja el footer hacia abajo cuando el contenido es corto */
 }
 
-/* Responsive */
-@media (max-width: 768px) { /* Ajustado para pantallas medianas */
+/* Media Queries para Responsive Design */
+@media (max-width: 768px) { /* Ajustado para pantallas medianas (tablets y algunos móviles grandes) */
     .contact-form-wrapper {
-        max-width: 90%; /* Hace el formulario más ancho en pantallas medianas */
-    }
-}
-
-@media (max-width: 620px) {
-    .form-group {
-        flex-direction: column;
-    }
-
-    .form-group > div {
-        min-width: 100%;
-    }
-
-    button[type="submit"] {
-        font-size: 1.1rem;
+        max-width: 90%; /* Hace el formulario un poco más ancho en estas pantallas */
     }
 
     .contact-form {
-        padding: 30px 20px;
+        padding: 30px 25px; /* Reduce un poco el padding interno */
+    }
+
+    .form-group {
+        gap: 20px; /* Reduce el espacio entre campos */
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 620px) { /* Para pantallas más pequeñas (móviles) */
+    .form-group {
+        flex-direction: column; /* Apila los campos verticalmente */
+        gap: 15px; /* Reduce el espacio entre campos apilados */
+    }
+
+    .form-group > div {
+        min-width: 100%; /* Cada campo ocupa el 100% del ancho */
+    }
+
+    button[type="submit"] {
+        font-size: 1.1rem; /* Reduce un poco el tamaño del texto del botón */
+    }
+
+    .contact-form {
+        padding: 25px 20px; /* Más reducción de padding */
+    }
+
     .form-title {
-        font-size: 2rem;
+        font-size: 2.2rem; /* Reduce el tamaño del título */
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width: 400px) { /* Para móviles muy pequeños */
+    .form-title {
+        font-size: 1.8rem; /* Título aún más pequeño */
+    }
+    .contact-form {
+        padding: 20px 15px;
     }
 }

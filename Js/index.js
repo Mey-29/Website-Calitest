@@ -24,3 +24,7 @@
   window.addEventListener('load', () => {
     setTimeout(autoScrollSlider, 1000); // Espera un segundo antes de iniciar
   });
+
+  /*wsp */
+
+  

@@ -35,7 +35,7 @@
                         <div class="product-badge offer-badge">OFERTA!</div>
                         <div class="product-badge discount-badge">-7%</div>
                         <div class="product-image-wrapper">
-                            <img src="img/contador-temporizador.jpg" alt="Contador / Temporizador AUTONICS">
+                            <img src="img/contaador.jpg" alt="Contador / Temporizador AUTONICS">
                         </div>
                         <div class="product-info">
                             <h4 class="product-name">Contador / Tiempo / Temporizador (Counter / Timer) – AUTONICS</h4>
@@ -49,7 +49,7 @@
                         <div class="product-badge offer-badge">OFERTA!</div>
                         <div class="product-badge discount-badge">-8%</div>
                         <div class="product-image-wrapper">
-                            <img src="img/controlador-temperatura.jpg" alt="Controlador de Temperatura AUTONICS">
+                            <img src="img/controlador.jpg" alt="Controlador de Temperatura AUTONICS">
                         </div>
                         <div class="product-info">
                             <h4 class="product-name">Controlador de Temperatura °C / °F Relay+SSR – AUTONICS</h4>
@@ -63,7 +63,7 @@
                         <div class="product-badge offer-badge">OFERTA!</div>
                         <div class="product-badge discount-badge">-4%</div>
                         <div class="product-image-wrapper">
-                            <img src="img/variador-velocidad.jpg" alt="Variador de Velocidad RIJING">
+                            <img src="img/variador.jpg" alt="Variador de Velocidad RIJING">
                         </div>
                         <div class="product-info">
                             <h4 class="product-name">Variador de Velocidad de Frecuencia de 1 HP / 0.75KW / 3.2A – RIJING</h4>

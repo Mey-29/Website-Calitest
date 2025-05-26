@@ -92,7 +92,7 @@
     </div>
 
      <div class="dropdown">
-        <a href="#" class="<?= in_array($currentPage, ['acercade.php', 'misionVision.php']) ? 'active' : '' ?>">
+        <a href="#" class="<?= in_array($currentPage, ['inicioSesion.php']) ? 'active' : '' ?>">
             <i class="fas fa-building"></i> LOGIN
         </a>
      <div class="dropdown-content">

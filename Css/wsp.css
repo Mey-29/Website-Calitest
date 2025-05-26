@@ -1,0 +1,209 @@
+/* ------------------------------------ */
+/* --- Botón Flotante de WhatsApp --- */
+/* ------------------------------------ */
+.wa_btn_popup {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wa_btn_popup:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.wa__btn_popup_icon img {
+    /* Estilos para tu imagen de WhatsApp dentro del botón */
+    width: 30px; /* Tamaño del icono (ajusta si es necesario) */
+    height: 30px; /* Mantén el mismo ancho y alto para que sea cuadrada */
+    object-fit: contain; /* Asegura que la imagen se ajuste dentro del espacio */
+    display: block; /* Elimina cualquier espacio extra */
+}
+
+/* Ocultar elementos de texto si no se usan en el botón flotante */
+.wa__btn_popup_txt {
+    display: none;
+}
+
+/* El resto del CSS de la caja de chat y avatares permanece igual */
+
+/* ------------------------------------ */
+/* --- Caja de Chat Emergente --- */
+/* ------------------------------------ */
+.wa_popup_chat_box {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 320px;
+    max-height: 450px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    z-index: 9998;
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.wa_popup_chat_box.wa_active {
+    display: flex;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.wa__popup_heading {
+    background-color: #075e54;
+    color: #fff;
+    padding: 15px 20px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.wa__popup_title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.wa__popup_title .emoji {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+.wa__popup_intro {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    display: none;
+}
+
+.wa_popup_content {
+    padding: 15px;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.wa__popup_content_list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.wa__popup_content_item {
+    margin-bottom: 10px;
+}
+
+.wa__popup_content_item:last-child {
+    margin-bottom: 0;
+}
+
+.wa__popup_content_item a {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.wa__popup_content_item a:hover {
+    background-color: #e6e6e6;
+    transform: translateX(5px);
+}
+
+.wa__popup_avatar {
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wa__popup_avatar img.avatar-img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+
+.wa__member_name {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.wa__member_duty {
+    font-size: 12px;
+    color: #666;
+    display: none;
+}
+
+.wa__popup_notice {
+    display: none;
+}
+
+@media (max-width: 480px) {
+    .wa_btn_popup {
+        width: 50px;
+        height: 50px;
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .wa__btn_popup_icon img { /* Asegúrate de que esto afecte a tu imagen */
+        width: 26px;
+        height: 26px;
+    }
+
+    .wa_popup_chat_box {
+        width: calc(100% - 40px);
+        bottom: 75px;
+        left: 20px;
+        right: 20px;
+        margin: 0 auto;
+        max-height: 70vh;
+    }
+
+    .wa__popup_heading {
+        padding: 10px 15px;
+    }
+
+    .wa__popup_title {
+        font-size: 16px;
+    }
+
+    .wa__popup_content_item a {
+        padding: 8px;
+    }
+
+    .wa__popup_avatar img.avatar-img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .wa__member_name {
+        font-size: 14px;
+    }
+}

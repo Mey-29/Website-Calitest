@@ -76,7 +76,7 @@
         </div>
     </div>
 </div>
-
+<?php include 'Wsp.php'?>
 <?php include 'footer.php'; ?>
 
 </body>
