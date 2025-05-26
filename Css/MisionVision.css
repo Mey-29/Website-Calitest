@@ -1,0 +1,142 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    color: #333;
+    background-color: #f4f4f4;
+    display: flex; /* Para el sticky footer */
+    flex-direction: column; /* Para el sticky footer */
+    min-height: 100vh; /* Para el sticky footer */
+}
+
+/* Contenedor general de la página */
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centra el h2 y el contenido principal */
+    max-width: 900px; /* Ancho máximo para el contenedor principal */
+    margin: 40px auto 20px; /* Ajuste el margen superior e inferior, centrado horizontalmente */
+    flex: 1; /* Permite que el contenedor ocupe el espacio restante */
+    width: calc(100% - 40px); /* Asegura que no haya desbordamiento horizontal en móviles */
+    box-sizing: border-box; /* Incluye padding en el ancho */
+}
+
+h2 {
+    color: #198754; /* Un color verde similar al de tu header */
+    font-size: 2.2em;
+    margin-bottom: 30px; /* Más espacio debajo del título principal */
+}
+
+/* Contenedor del contenido de Misión y Visión (imagen y textos) */
+.mission-vision-content {
+    display: flex !important; /* Forzar flexbox */
+    flex-direction: column !important; /* Forzar apilamiento vertical */
+    align-items: center; /* Centra los elementos horizontalmente */
+    gap: 30px; /* Espacio entre la imagen y cada sección de texto */
+    width: 100%; /* Asegura que este contenedor ocupe el 100% del .container */
+}
+
+/* Estilos para el contenedor de la imagen */
+.image-container {
+    width: 100%; /* Ocupa el ancho completo del mission-vision-content */
+    max-width: 600px; /* Limita el ancho máximo de la imagen en pantallas grandes */
+    margin: 0 auto; /* Centra la imagen dentro de su espacio */
+    padding: 0; /* Asegurarse de que no tenga padding extra */
+}
+
+.image-container img {
+    width: 100%; /* La imagen ocupa el 100% de su contenedor */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    display: block; /* Elimina cualquier espacio extra que algunos navegadores añaden a las imágenes */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+}
+
+/* Estilos para las secciones de texto (Misión y Visión) */
+.mission-section, .vision-section {
+    width: 100%; /* Ocupa el ancho completo del mission-vision-content */
+    max-width: 700px; /* Limita el ancho del texto para legibilidad en pantallas grandes */
+    margin: 0 auto; /* Centra las secciones de texto */
+    text-align: left; /* Alinea el texto a la izquierda */
+    padding: 0 15px; /* Añadir padding a los lados para que el texto no toque los bordes */
+    box-sizing: border-box; /* Incluye padding en el ancho total */
+}
+
+.mission-section h3, .vision-section h3 {
+    color: #198754; /* Usar el color verde principal */
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-align: center; /* Centrar el título de la sección */
+}
+
+.mission-section p, .vision-section p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #555;
+    text-align: justify; /* Justificar el texto para una apariencia limpia */
+}
+
+/* 📱 Responsivo para pantallas más pequeñas (móviles y tablets) */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 15px; /* Reducir padding en móviles */
+        margin: 15px auto; /* Ajustar margen */
+        width: calc(100% - 30px); /* Ajuste para evitar desbordamiento */
+    }
+
+    h2 {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+
+    .mission-vision-content {
+        gap: 20px; /* Reducir el espacio entre elementos en móvil */
+    }
+
+    .image-container {
+        padding: 0 5px; /* Reducir padding alrededor de la imagen en móvil */
+    }
+
+    .image-container img {
+        max-width: 350px; /* Limitar la imagen a un tamaño razonable en móviles */
+        width: 100%; /* Asegurarse de que ocupe el ancho disponible */
+    }
+
+    .mission-section h3, .vision-section h3 {
+        font-size: 1.3em;
+    }
+
+    .mission-section p, .vision-section p {
+        padding: 0 10px; /* Ajustar padding del texto en móviles */
+    }
+}
+
+
+/* Estilos para el Footer (asumiendo que viene de footer.php) */
+footer {
+    background-color: #333; /* Color de fondo del footer */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%; /* Asegura que el footer ocupe todo el ancho */
+    box-sizing: border-box; /* Incluye padding en el ancho */
+    margin-top: auto; /* Empuja el footer hacia abajo cuando hay poco contenido */
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+footer a {
+    color: #198754; /* Color para enlaces en el footer */
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}   

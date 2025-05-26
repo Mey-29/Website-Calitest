@@ -1,0 +1,95 @@
+ /*POLITICAS PRIVACIDAD*/
+
+        body {
+font-family: 'Segoe UI', sans-serif;  
+   margin: 0;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+
+
+h1, h2 {
+    color: #101111;
+}
+
+h1 {
+   /* border-bottom: 2px solid #0c0c0c;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    */
+
+       font-family: 'Playfair Display', serif; /* Fuente serif llamativa para el título */
+            color: #0f0f0f; /* Un verde más profundo y atractivo */
+            margin-bottom: 25px;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
+            font-size: 2.8em; /* Tamaño un poco mayor */
+            border-bottom: 4px solid #d8d8d8;
+            padding-bottom: 18px;
+            text-align: center;
+}
+
+section {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    color: #28a745;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+     text-align: center;
+       
+}
+
+p {
+    margin-bottom: 10px;
+       text-align: center;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+/*FLECHA SUBIR*/
+
+ #botonSubir {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Fijo en la pantalla */
+    bottom: 20px; /* A 20px del borde inferior */
+    right: 20px; /* A 20px del borde derecho */
+    background-color: white; /* Fondo blanco para el círculo interior */
+    color:rgb(10, 10, 10); /* Color de la flecha */
+    border: none;
+    border-radius: 50%; /* Forma de círculo */
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1000; /* Asegurar que esté por encima de otros elementos */
+    background-image: conic-gradient(#198754 0%, #198754 0%, transparent 0%, transparent 100%); /* Inicialmente sin línea */
+    background-size: 100% 100%;
+}
+
+#botonSubir:hover {
+    opacity: 1;
+}
+
+
+

@@ -1,0 +1,290 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    color: #333;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 1200px; /* Ancho máximo para el contenido principal */
+    margin: 40px auto 20px;
+    flex: 1;
+    box-sizing: border-box; /* Fundamental para padding y ancho */
+    width: calc(100% - 40px); /* Ajuste para evitar desbordamiento en pantallas pequeñas */
+}
+
+.page-title {
+    color: #198754;
+    font-size: 2.5em;
+    text-align: left; /* Título alineado a la izquierda como en tu imagen */
+    margin-bottom: 25px;
+}
+
+/* Diseño principal de la tienda: sidebar y productos */
+.shop-layout {
+    display: flex;
+    gap: 30px; /* Espacio entre la barra lateral y los productos */
+    align-items: flex-start; /* Alinea los elementos al inicio (arriba) */
+}
+
+/* Barra lateral de categorías */
+.sidebar {
+    flex: 0 0 250px; /* Ancho fijo para la barra lateral */
+    max-width: 250px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.category-filter h3 {
+    color: #198754;
+    font-size: 1.2em;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.category-underline {
+    border-bottom: 2px solid #198754;
+    width: 60px; /* Longitud de la línea debajo del título */
+    margin-bottom: 20px;
+}
+
+#category-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+    background-color: white;
+    appearance: none; /* Elimina la flecha predeterminada del select */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%3E%3Cpath%20fill%3D%22%23666%22%20d%3D%22M205.66%2099.66L128%20177.34L50.34%2099.66z%22%2F%3E%3C%2Fsvg%3E'); /* Flecha personalizada */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+}
+
+/* Listado de productos */
+.product-listing {
+    flex: 1; /* Ocupa el espacio restante */
+}
+
+.results-info {
+    text-align: left;
+    margin-bottom: 20px;
+    color: #666;
+    font-size: 0.95em;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Columnas responsivas */
+    gap: 25px; /* Espacio entre las tarjetas de producto */
+}
+
+.product-card {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    padding: 15px;
+    text-align: center;
+    position: relative; /* Para posicionar las insignias */
+    overflow: hidden; /* Asegura que las insignias no se salgan */
+    transition: transform 0.2s ease-in-out;
+}
+
+.product-card:hover {
+    transform: translateY(-5px); /* Pequeño efecto al pasar el ratón */
+}
+
+.product-badge {
+    position: absolute;
+    top: 10px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: white;
+    z-index: 10;
+}
+
+.offer-badge {
+    background-color: #dc3545; /* Rojo */
+    left: 10px;
+}
+
+.discount-badge {
+    background-color: #28a745; /* Verde */
+    right: 10px;
+}
+
+.product-image-wrapper {
+    margin-bottom: 15px;
+    height: 180px; /* Altura fija para el contenedor de la imagen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Oculta partes de la imagen si se desborda */
+}
+
+.product-image-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Ajusta la imagen dentro del contenedor sin recortar */
+    border-radius: 4px;
+}
+
+.product-info {
+    text-align: center;
+}
+
+.product-name {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 10px;
+    min-height: 50px; /* Espacio para nombres de producto largos */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.original-price {
+    color: #999;
+    text-decoration: line-through;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+.original-price .igv {
+    font-size: 0.8em;
+    color: #777;
+}
+
+.current-price {
+    color: #198754; /* Verde principal */
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.add-to-cart-button {
+    background-color: #198754;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-button:hover {
+    background-color: #156d40;
+}
+
+/* 📱 Responsividad */
+@media screen and (max-width: 992px) {
+    .shop-layout {
+        flex-direction: column; /* Apilar barra lateral y productos en pantallas medianas */
+        align-items: center; /* Centrar al apilar */
+    }
+
+    .sidebar {
+        flex: 0 0 auto; /* Ya no tiene ancho fijo */
+        width: 100%; /* Ocupa todo el ancho */
+        max-width: 400px; /* Limita su ancho máximo si la pantalla es muy grande */
+        margin-bottom: 30px; /* Espacio entre sidebar y productos */
+        text-align: center; /* Centrar el contenido de la sidebar */
+    }
+
+    .category-underline {
+        margin: 0 auto 20px; /* Centrar la línea en modo apilado */
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Columnas un poco más pequeñas */
+    }
+
+    .container {
+        padding: 20px;
+        width: calc(100% - 30px);
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .container {
+        padding: 15px;
+        width: calc(100% - 20px);
+    }
+
+    .page-title {
+        font-size: 2em;
+        text-align: center; /* Centrar el título en móvil */
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr; /* Una sola columna para móviles muy pequeños */
+        gap: 20px;
+    }
+
+    .product-card {
+        padding: 10px;
+    }
+
+    .product-name {
+        font-size: 1em;
+        min-height: 45px;
+    }
+
+    .current-price {
+        font-size: 1.2em;
+    }
+
+    .add-to-cart-button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+
+    .sidebar {
+        padding: 15px;
+    }
+}
+
+
+/* Estilos para el Footer (asumiendo que viene de footer.php) */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+footer a {
+    color: #198754;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

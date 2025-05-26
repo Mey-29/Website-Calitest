@@ -1,0 +1,113 @@
+body {
+    background: #e9ecf1;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.login-register-wrapper {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.form-box {
+    display: none;
+}
+
+.form-box.active {
+    display: block;
+}
+
+h3 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #2c3e50;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    color: #34495e;
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.password-input-wrapper {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    background: none;
+    border: none;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #888;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-login {
+    background-color: #2980b9;
+}
+
+.btn-register {
+    background-color: #27ae60;
+}
+
+.switch-form-text {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.switch-form-text a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+/* New CSS for the privacy policy text */
+.privacy-text {
+    font-size: 13px; /* Slightly smaller font size */
+    color: #555; /* A bit darker than light grey for readability */
+    line-height: 1.5; /* Good line spacing */
+    margin-top: 30px; /* Space above the text */
+    text-align: left; /* Aligned to the left */
+}
+
+.privacy-text .privacy-link {
+    color: #007bff; /* LinkedIn-like blue for the link */
+    text-decoration: none; /* No underline by default */
+}
+
+.privacy-text .privacy-link:hover {
+    text-decoration: underline; /* Underline on hover for interactivity */
+}

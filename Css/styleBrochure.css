@@ -1,0 +1,98 @@
+    body {
+            background: #e9ecf1;
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+        }
+.brochure-page-flex {
+    display: flex;
+    flex-direction: row; /* Alinea los elementos en fila (lado a lado) */
+    align-items: center; /* Centra verticalmente los elementos */
+    justify-content: space-around; /* Distribuye el espacio entre los elementos */
+    padding: 20px;
+}
+
+.side-content {
+    text-align: center; /* Alinea el texto a la izquierda dentro de los bloques laterales */
+    flex: 1; /* Permite que los bloques laterales crezcan/se encojan */
+    padding: 20px;
+}
+
+.side-content h3 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    color: #008000;
+}
+
+.side-content.left ul {
+    list-style: none;
+    padding: 0;
+}
+
+.side-content.left ul li {
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.side-content.left ul li::before {
+    content: "\•";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: #008000;
+}
+
+.brochure-image {
+    flex: 2; /* Le da más espacio a la imagen */
+    display: flex;
+    justify-content: center; /* Centra la imagen dentro de su contenedor */
+    margin: 20px; /* Añade un poco de margen alrededor de la imagen */
+}
+
+.brochure-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.button {
+    display: inline-block;
+    background-color: #008000;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #006000;
+}
+
+.download-button {
+    background-color: #4CAF50;
+}
+
+.download-button:hover {
+    background-color: #45a049;
+}
+
+@media (max-width: 768px) {
+    .brochure-page-flex {
+        flex-direction: column; /* Apila los elementos en pantallas pequeñas */
+        align-items: center; /* Centra los elementos en móviles */
+    }
+    .side-content {
+        text-align: center;
+        margin-bottom: 30px;
+        width: 100%; /* Ocupa todo el ancho en móviles */
+    }
+    .brochure-image {
+        width: 80%; /* Reduce el ancho de la imagen en móviles */
+        margin: 20px auto; /* Centra la imagen en móviles */
+    }
+    .side-content.left ul {
+        text-align: left; /* Vuelve a la alineación izquierda en móviles */
+    }
+}

@@ -1,0 +1,239 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #e9ecf1;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #222;
+}
+
+/* Ajustes para el contenido principal y el formulario */
+.main-content {
+    flex: 1; /* Permite que el main-content ocupe el espacio restante */
+    display: flex; /* Para centrar el formulario dentro de él */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: flex-start; /* Alinear al inicio verticalmente (arriba) */
+    padding: 40px 20px; /* Añadir padding para que el formulario no pegue a los bordes */
+    width: 100%; /* Asegurar que ocupe todo el ancho disponible */
+    box-sizing: border-box; /* Incluir padding en el ancho */
+}
+
+.contact-form-wrapper {
+    width: 100%; /* Ocupa el 100% del main-content */
+    max-width: 700px; /* Ancho máximo para el formulario. Puedes ajustar este valor. */
+    margin: 0 auto; /* Centrar horizontalmente si el ancho es menor al máximo */
+}
+
+.contact-form {
+    background-color: #fff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 128, 0, 0.15);
+    transition: box-shadow 0.3s ease;
+}
+
+.contact-form:hover {
+    box-shadow: 0 12px 40px rgba(0, 128, 0, 0.25);
+}
+
+.form-title {
+    text-align: center;
+    color: #198754;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    font-weight: 700;
+    position: relative;
+}
+
+.form-title::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #198754, #00cc44);
+    margin: 8px auto 0;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.form-title:hover::after {
+    width: 140px;
+}
+
+.form-group {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Permite que los elementos salten de línea en pantallas pequeñas */
+}
+
+.form-group > div {
+    min-width: 250px; /* Ancho mínimo para que no se aprieten demasiado */
+}
+
+/* Nueva regla para el campo de mensaje para que ocupe todo el ancho */
+.form-group.full-width > div {
+    flex: 1 1 100%; /* Ocupa todo el ancho disponible */
+    min-width: unset; /* Elimina el min-width anterior */
+}
+
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #2c6e49;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea,
+input[type="file"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1.8px solid #a4cca8;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    color: #222;
+    background-color: #fefefe;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: inset 0 1px 3px rgb(0 0 0 / 0.07);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+textarea:focus,
+input[type="file"]:focus {
+    border-color: #198754;
+    outline: none;
+    box-shadow: 0 0 8px 2px rgba(25, 135, 84, 0.4);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+    font-family: inherit;
+}
+
+.required {
+    color: #d32f2f;
+    font-weight: 700;
+}
+
+.attachments {
+    margin-bottom: 25px;
+}
+
+.attachment-row {
+    margin-bottom: 10px;
+}
+
+.privacy-policy {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    color: #2c6e49;
+    margin-bottom: 30px;
+}
+
+.privacy-policy input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1.5px solid #198754;
+    transition: background-color 0.3s ease;
+}
+
+.privacy-policy input[type="checkbox"]:checked {
+    background-color: #198754;
+    border-color: #198754;
+}
+
+.privacy-policy a {
+    color: #198754;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.privacy-policy a:hover {
+    text-decoration: underline;
+}
+
+button[type="submit"] {
+    width: 100%;
+    background-color: #198754;
+    color: white;
+    padding: 15px 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.15s ease;
+    box-shadow: 0 4px 12px rgba(25, 135, 84, 0.5);
+}
+
+button[type="submit"]:hover {
+    background-color: #0f4f29;
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(15, 79, 41, 0.7);
+}
+
+.notes {
+    color: #d32f2f;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 12px;
+}
+
+/* Estilos para el Footer (Asumiendo que viene de footer.php) */
+footer {
+    background-color: #333; /* Color de fondo del footer */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%; /* Asegura que el footer ocupe todo el ancho */
+    box-sizing: border-box; /* Incluye padding en el ancho */
+    margin-top: auto; /* Empuja el footer hacia abajo */
+}
+
+/* Responsive */
+@media (max-width: 768px) { /* Ajustado para pantallas medianas */
+    .contact-form-wrapper {
+        max-width: 90%; /* Hace el formulario más ancho en pantallas medianas */
+    }
+}
+
+@media (max-width: 620px) {
+    .form-group {
+        flex-direction: column;
+    }
+
+    .form-group > div {
+        min-width: 100%;
+    }
+
+    button[type="submit"] {
+        font-size: 1.1rem;
+    }
+
+    .contact-form {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 400px) {
+    .form-title {
+        font-size: 2rem;
+    }
+}
