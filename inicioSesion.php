@@ -31,8 +31,7 @@
             </div>
             <button type="submit" class="btn btn-login">Entrar</button>
             <p class="switch-form-text">
-                ¿No tienes cuenta? <a href="#" id="show-register">Regístrate</a>
-            </p>
+         </p>
         </form>
     </div>
 

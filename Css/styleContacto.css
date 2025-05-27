@@ -77,13 +77,8 @@ body {
 }
 
 .form-group > div {
-    flex: 1; /* ¡CLAVE! Hace que cada div interno ocupe espacio equitativo */
-    min-width:300px; /* Ancho mínimo para que no se aprieten demasiado */
-    display: flex; /* Habilita Flexbox para label e input/textarea */
-    flex-direction: column; /* Coloca la label encima del input/textarea */
+    min-width:300px; 
 }
-
-/* Campo de mensaje que ocupa todo el ancho */
 .form-group.full-width {
     /* No uses display: flex; aquí, ya que quieres que el div interno ocupe todo el ancho */
     display: block; /* Vuelve a block para que no aplique flexbox al contenedor */

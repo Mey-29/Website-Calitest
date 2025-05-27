@@ -17,8 +17,8 @@
 <body>
 <footer class="footer">
     <div class="footer-inner">
-        <p>© 2025 CALITEST S.A.C. | Medir, Pesar y Calibrar</p>
-        <p>by <a href="#" target="_blank">Cital FP</a></p>
+        <p>© 2022 CALITEST S.A.C. | Medir, Pesar y Calibrar</p>
+        
     </div>
 </footer>
 
